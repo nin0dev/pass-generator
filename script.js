@@ -1,16 +1,14 @@
 // Get the HTML elements
 const resultEl = document.getElementById('result'),
 lengthEl = document.querySelector('.parameters input[type=range'),
+lengthResult = document.querySelector('.top input'),
 checkbox = document.querySelectorAll('div.input-container > input'),
-upperCheckbox = document.querySelectorAll('div.input-container input#upper-letters'),
-lowerCheckbox = document.querySelectorAll('div.input-container input#lower-letters'),
-numberCheckbox = document.querySelectorAll('div.input-container input#numbers'),
-symbolCheckbox = document.querySelectorAll('div.input-container input#symbols'),
 generateBtn = document.getElementById('generate'),
 dot1 = document.querySelector('.dot-1'),
 dot2 = document.querySelector('.dot-2'),
 dot3 = document.querySelector('.dot-3'),
-dot4 = document.querySelector('.dot-4');
+dot4 = document.querySelector('.dot-4'),
+dots = document.querySelectorAll('.dots');
 
 const characters = { // object of letters, numbers & symbols
     lowercases: "abcdefghijklmnopqrstuvwxyz",
@@ -19,12 +17,35 @@ const characters = { // object of letters, numbers & symbols
     symbols: "^!$%&[](){}:;.,*+-#@<>~"
 }
 
-// // Password strength indicator
-// const updateIndicator = () => {
-//     if ()
-// }
+// Show slider's value (password length)
+function rangeInput() {
+    lengthResult.value = lengthEl.value;
+}
 
-// // Show slider's value (password length)
+// Password strength indicator
+function updateIndicator() {
+    if (lengthEl.value <= 6) {
+        dot1.style.backgroundColor = 'white';
+        dot2.style.backgroundColor = 'transparent';
+        dot3.style.backgroundColor = 'transparent';
+        dot4.style.backgroundColor = 'transparent';
+    } else if (!lengthEl.value <= 6 && lengthEl.value <= 8) {
+        dot1.style.backgroundColor = 'white';
+        dot2.style.backgroundColor = 'white';
+        dot3.style.backgroundColor = 'transparent';
+        dot4.style.backgroundColor = 'transparent';
+    } else if (!lengthEl.value <= 6 && !lengthEl.value <= 8 && lengthEl.value <= 10) {
+        dot1.style.backgroundColor = 'white';
+        dot2.style.backgroundColor = 'white';
+        dot3.style.backgroundColor = 'white';
+        dot4.style.backgroundColor = 'transparent';
+    } else if (!lengthEl.value <= 6 && !lengthEl.value <= 8 && !lengthEl.value <= 10 && lengthEl.value <= 12) {
+        dot1.style.backgroundColor = 'white';
+        dot2.style.backgroundColor = 'white';
+        dot3.style.backgroundColor = 'white';
+        dot4.style.backgroundColor = 'white';
+    }
+}
 
 
 // On 'GENERATE' button click, action...
@@ -60,6 +81,5 @@ function generate() {
         randomPassword += randomChar;
     }
     resultEl.value = randomPassword;
-
-    // updateIndicator();
+    updateIndicator();
 }

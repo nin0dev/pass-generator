@@ -23,7 +23,7 @@
                 <p>Character Length</p>
                 <input id="amount" type="number" value="0" min="0" max="12" step="1" disabled />
             </div>
-            <input type="range" id="lengthResult" name="length" min="0" max="12" value="0" step="1" />
+            <input type="range" id="lengthResult" oninput="rangeInput()" name="length" min="0" max="12" value="0" step="1" />
             <div class="checks">
                 <div class="input-container">
                     <input id="lower-letters" type="checkbox" checked disabled>
