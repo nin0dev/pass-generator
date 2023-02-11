@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator by Nino Berber</title>
+    <link href="./style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="mask-icon" href="assets/img/safari-pinned-tab.svg" color="#5bbad5">
+</head>
+
+<body>
+    <h1>Password Generator</h1>
+    <p>by Nino Berber</p>
+    <div class="container">
+        <div class="input">
+            <input type="text" id="result" placeholder="PASSWORD" disabled>
+        </div>
+        <div class="parameters">
+            <div class="top">
+                <p>Character Length</p>
+                <input id="amount" type="number" value="0" min="0" max="12" step="1" disabled />
+            </div>
+            <input type="range" id="lengthResult" name="length" min="0" max="12" value="0" step="1" />
+            <div class="checks">
+                <div class="input-container">
+                    <input id="upper-letters" type="checkbox">
+                    <label>Include Uppercase Letters</label>
+                </div>
+                <div class="input-container">
+                    <input id="lower-letters" type="checkbox">
+                    <label>Include Lowercase Letters</label>
+                </div>
+                <div class="input-container">
+                    <input id="numbers" type="checkbox">
+                    <label>Include Numbers</label>
+                </div>
+                <div class="input-container">
+                    <input id="symbols" type="checkbox">
+                    <label>Include Symbols</label>
+                </div>
+            </div>
+            <div class="strength-container">
+                <p>Strength</p>
+                <div class="dots-container">
+                    <div class="dot-1 dots"></div>
+                    <div class="dot-2 dots"></div>
+                    <div class="dot-3 dots"></div>
+                    <div class="dot-4 dots"></div>
+                </div>
+            </div>
+            <button id="generate" onclick="generate()">GENERATE</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
