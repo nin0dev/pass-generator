@@ -13,7 +13,7 @@
 
 <body>
     <h1>Password Generator</h1>
-    <p>by Nino Berber</p>
+    <p>by <a href="http://www.ninoberber.com" target="_blank">Nino Berber</a></p>
     <div class="container">
         <div class="input">
             <input type="text" id="result" placeholder="PASSWORD" disabled>
@@ -26,20 +26,21 @@
             <input type="range" id="lengthResult" name="length" min="0" max="12" value="0" step="1" />
             <div class="checks">
                 <div class="input-container">
-                    <input id="upper-letters" type="checkbox">
-                    <label>Include Uppercase Letters</label>
+                    <input id="lower-letters" type="checkbox" checked disabled>
+                    <label for="lower-letters">Include Lowercase Letters</label>
                 </div>
                 <div class="input-container">
-                    <input id="lower-letters" type="checkbox">
-                    <label>Include Lowercase Letters</label>
+                    <input id="upper-letters" type="checkbox">
+                    <label for="upper-letters">Include Uppercase Letters</label>
                 </div>
+                
                 <div class="input-container">
                     <input id="numbers" type="checkbox">
-                    <label>Include Numbers</label>
+                    <label for="numbers">Include Numbers</label>
                 </div>
                 <div class="input-container">
                     <input id="symbols" type="checkbox">
-                    <label>Include Symbols</label>
+                    <label for="symbols">Include Symbols</label>
                 </div>
             </div>
             <div class="strength-container">
@@ -51,7 +52,7 @@
                     <div class="dot-4 dots"></div>
                 </div>
             </div>
-            <button id="generate" onclick="generate()">GENERATE</button>
+            <button id="generate" type="submit" onclick="generate()">GENERATE</button>
         </div>
     </div>
     <script src="script.js"></script>
